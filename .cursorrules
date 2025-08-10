@@ -1,0 +1,19 @@
+RESPONSIVE-FIRST RULE
+
+Always design and implement UI mobile-first and ensure it scales gracefully up to desktop. Apply these non-negotiables to every page, component, and edit:
+
+- Breakpoints: Start at base (mobile). Add responsive variants for `sm`, `md`, `lg`, `xl`, `2xl` where it improves readability or layout. Avoid fixed pixel widths; prefer `w-full`, `max-w-*`, and fluid layouts.
+- Layout: Prefer CSS Grid/Flex with `gap-*`. Wrap content in a centered container (e.g., `mx-auto max-w-6xl px-4`) to maintain readable line lengths.
+- Typography: Use responsive text sizes (e.g., `text-base sm:text-lg md:text-xl`) or fluid sizing via CSS where appropriate. Keep line-length ~45–75 chars.
+- Spacing: Use Tailwind spacing scale; adjust with responsive modifiers (e.g., `py-6 sm:py-8 md:py-12`).
+- Images/Media: Use `next/image` with `sizes` and `className="w-full h-auto"`. Provide responsive `sizes` strings and avoid fixed dimensions unless necessary.
+- Navigation: Must work on small screens. Collapse or simplify at mobile; avoid horizontal overflow. Interactive targets should be large enough and keyboard accessible.
+- Containers/Overflow: Prevent horizontal scroll on mobile. Use `min-w-0` within flex/grid children to avoid overflow. Add `overflow-x-auto` for wide content blocks (tables/code) and provide accessible labels.
+- Forms: Inputs are `w-full` on small screens; use clear labels and `focus-visible` styles. Place fields in one column on mobile; expand to multiple columns at `md+` if it improves clarity.
+- Accessibility: Ensure focus states, logical DOM order, and color contrast meet WCAG AA. Do not rely on hover-only affordances.
+- Visuals: Use existing brand tokens (olive, teal, gold, gray light, charcoal) and subtle geometric patterns. Avoid imagery of living beings.
+- Testing: Visually verify at typical widths (320/360/375, 768, 1024, 1280, 1536). No layout should break or clip.
+
+Definition of done for any UI change: Mobile renders cleanly, no horizontal scrolling, readable typography, and the layout progressively enhances across breakpoints.
+
+

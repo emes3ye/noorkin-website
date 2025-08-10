@@ -1,36 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Noorkin.dev
 
-## Getting Started
+Ethical technology solutions website built with Next.js 15, Tailwind CSS, and TypeScript.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Responsive Design**: Mobile-first approach with progressive enhancement
+- **Brand Integration**: Custom color palette and typography with Islamic-inspired geometric patterns
+- **Content Management**: Contentful CMS integration for blog posts with fallback mock data
+- **Contact Forms**: Email functionality via Nodemailer with validation
+- **Newsletter**: Subscription system (Mailchimp-ready)
+- **SEO Optimized**: Dynamic sitemaps, robots.txt, and meta tags
+- **Accessibility**: WCAG AA compliant with focus management and screen reader support
+
+## Technology Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: Tailwind CSS with custom design system
+- **Content**: Contentful CMS
+- **Email**: Nodemailer
+- **Fonts**: Inter & Playfair Display (next/font)
+- **Deployment**: Vercel-ready
+
+## Brand Tokens
+
+- **Primary**: Teal `#008080`
+- **Accent**: Gold `#D69A3E` 
+- **Text**: Charcoal `#333333`
+- **Background**: Gray Light `#F4F4F4`
+- **Olive**: `#556B2F` (updated)
+
+## Project Structure
+
+```
+src/
+├── app/                 # App Router pages
+│   ├── page.tsx        # Home page
+│   ├── services/       # Services page
+│   ├── about/          # About page
+│   ├── contact/        # Contact page with form
+│   ├── blog/           # Blog list and [slug] pages
+│   ├── api/            # API routes (contact, subscribe)
+│   ├── layout.tsx      # Root layout with fonts & navigation
+│   └── globals.css     # Tailwind + custom styles
+├── components/         # Reusable UI components
+│   ├── Navbar.tsx      # Navigation with mobile menu
+│   ├── Footer.tsx      # Footer with newsletter signup
+│   ├── CTAButton.tsx   # Styled button component
+│   ├── Section.tsx     # Layout wrapper
+│   ├── ServiceCard.tsx # Service display card
+│   └── ContactForm.tsx # Contact form with validation
+├── lib/
+│   ├── contentful.ts   # CMS integration with mock fallback
+│   └── utils.ts        # Utility functions
+└── public/
+    ├── logo.svg        # 8-pointed star logo
+    ├── pattern.svg     # Geometric background pattern
+    └── icons/          # Service icons (gear, cloud, cube, bulb, shield)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create `.env.local` with the following variables:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Contentful CMS Configuration
+CONTENTFUL_SPACE_ID=your_contentful_space_id_here
+CONTENTFUL_ENVIRONMENT=master
+CONTENTFUL_CDA_TOKEN=your_contentful_delivery_token_here
 
-## Learn More
+# Email Configuration (Contact Form)
+MAIL_FROM="Noorkin <hello@noorkin.dev>"
+MAIL_TO=hello@noorkin.dev
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_USER=your_smtp_username
+SMTP_PASS=your_smtp_password
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Install dependencies
+npm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Run development server
+npm run dev
 
-## Deploy on Vercel
+# Build for production
+npm run build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Start production server
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+The application is optimized for Vercel deployment:
+
+1. Push to GitHub
+2. Connect repository to Vercel
+3. Set environment variables in Vercel dashboard
+4. Deploy
+
+## Content Management
+
+### Contentful Setup
+
+Expected content type: `blogPost` with fields:
+- `slug` (Short text, unique)
+- `title` (Short text)
+- `excerpt` (Long text)
+- `content` (Rich text)
+- `publishedDate` (Date)
+- `author` (Short text, optional)
+
+### Mock Data
+
+When Contentful is not configured, the system uses mock blog posts for development.
+
+## Accessibility Features
+
+- Semantic HTML structure
+- ARIA labels and roles
+- Keyboard navigation support
+- Focus management
+- Screen reader compatibility
+- Color contrast compliance
+- Skip links for main content
+
+## Performance
+
+- Next.js Image optimization
+- Server-side rendering
+- Static generation for blog posts
+- Minimal client-side JavaScript
+- Efficient CSS with Tailwind tree-shaking
+
+## License
+
+Private - All rights reserved to Noorkin.dev

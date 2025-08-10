@@ -1,0 +1,31 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 8-pointed star from interlocking squares with colors -->
+  <defs>
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#556B2F" />
+      <stop offset="100%" style="stop-color:#6B8B3D" />
+    </linearGradient>
+    <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#008080" />
+      <stop offset="100%" style="stop-color:#20B2AA" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer square rotated 45 degrees -->
+  <rect x="12" y="12" width="16" height="16" transform="rotate(45 20 20)" 
+        stroke="url(#primaryGradient)" stroke-width="2" fill="none" />
+  
+  <!-- Inner square -->
+  <rect x="14" y="14" width="12" height="12" 
+        stroke="url(#secondaryGradient)" stroke-width="2" fill="rgba(0,128,128,0.1)" />
+  
+  <!-- Center circle -->
+  <circle cx="20" cy="20" r="4" 
+          stroke="#D69A3E" stroke-width="2" fill="rgba(214,154,62,0.2)" />
+  
+  <!-- Four rays extending outward -->
+  <line x1="20" y1="4" x2="20" y2="12" stroke="url(#primaryGradient)" stroke-width="2" />
+  <line x1="20" y1="28" x2="20" y2="36" stroke="url(#primaryGradient)" stroke-width="2" />
+  <line x1="4" y1="20" x2="12" y2="20" stroke="url(#secondaryGradient)" stroke-width="2" />
+  <line x1="28" y1="20" x2="36" y2="20" stroke="url(#secondaryGradient)" stroke-width="2" />
+</svg>
