@@ -35,8 +35,14 @@ export const metadata: Metadata = {
         type: "image/svg+xml",
       },
     ],
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    shortcut: ["/favicon.ico"],
+    apple: [
+      {
+        url: "/favicon.ico",
+        sizes: "32x32",
+        type: "image/x-icon",
+      },
+    ],
   },
   openGraph: {
     title: "Noorkin.dev — Enlightened tech solutions",
