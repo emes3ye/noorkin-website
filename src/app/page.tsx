@@ -6,38 +6,100 @@ import ServiceCard from "@/components/ServiceCard";
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <Section className="relative bg-white overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-pattern-overlay opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-br from-white/70 to-white/50" />
+      {/* Hero Section with Animated Gradient */}
+      <Section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/15 to-accent/20 animate-gradient-x"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-secondary/10 via-transparent to-primary/15 animate-gradient-y"></div>
         
-        <div className="relative text-center lg:text-left">
-          <div className="max-w-4xl mx-auto lg:mx-0">
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-charcoal leading-tight">
-              <span className="block">Illuminating Your Business</span>
-              <span className="block text-primary italic">
+        {/* Floating Geometric Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-xl animate-float"></div>
+          <div className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-br from-accent/20 to-primary/20 rounded-full blur-2xl animate-float-delayed"></div>
+          <div className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-br from-secondary/20 to-accent/20 rounded-full blur-xl animate-float-slow"></div>
+          <div className="absolute bottom-40 right-10 w-16 h-16 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-full blur-lg animate-pulse"></div>
+        </div>
+
+        {/* Geometric Pattern Overlay */}
+        <div className="absolute inset-0 bg-pattern-overlay opacity-10 animate-pulse-slow"></div>
+        
+        {/* Hero Content */}
+        <div className="relative z-10 w-full text-center lg:text-left">
+          <div className="max-w-5xl mx-auto lg:mx-0">
+            {/* Main Heading with Gradient Text */}
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+              <span className="block bg-gradient-to-r from-charcoal via-primary to-charcoal bg-clip-text text-transparent animate-text-shimmer bg-300% mb-2">
+                Illuminating Your Business
+              </span>
+              <span className="block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-text-shimmer bg-300% italic">
                 with Ethical Tech Solutions
               </span>
             </h1>
             
-            <p className="mt-6 text-lg sm:text-xl text-charcoal/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            {/* Subtitle with Fade-in Animation */}
+            <p className="mt-8 text-lg sm:text-xl lg:text-2xl text-charcoal/80 max-w-3xl mx-auto lg:mx-0 leading-relaxed animate-fade-in-up">
               We craft custom software with integrity, excellence, and respect. 
-              Building the future while honoring timeless values.
+              Building the future while honoring timeless values through innovative technology.
             </p>
             
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <CTAButton size="lg" asChild>
+            {/* CTA Buttons with Staggered Animation */}
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up-delayed">
+              <CTAButton 
+                className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                size="lg" 
+                asChild
+              >
                 <Link href="/services">
-                  Explore Our Services
+                  <span className="flex items-center gap-2">
+                    Explore Our Services
+                    <svg className="w-5 h-5 animate-bounce-x" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
                 </Link>
               </CTAButton>
-              <CTAButton variant="outline" size="lg" asChild>
+              <CTAButton 
+                variant="outline" 
+                className="border-2 border-primary text-primary hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:text-white hover:border-transparent transform hover:scale-105 transition-all duration-300 backdrop-blur-sm bg-white/10"
+                size="lg" 
+                asChild
+              >
                 <Link href="/contact">
-                  Start a Conversation
+                  <span className="flex items-center gap-2">
+                    Start a Conversation
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                  </span>
                 </Link>
               </CTAButton>
             </div>
+
+            {/* Trust Indicators */}
+            <div className="mt-12 animate-fade-in-up-more-delayed">
+              <p className="text-sm text-charcoal/60 mb-4">Trusted by forward-thinking organizations</p>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-6 items-center opacity-60">
+                <div className="flex items-center gap-2 text-sm font-medium text-charcoal/70">
+                  <div className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full animate-pulse"></div>
+                  Ethical Development
+                </div>
+                <div className="flex items-center gap-2 text-sm font-medium text-charcoal/70">
+                  <div className="w-2 h-2 bg-gradient-to-r from-secondary to-accent rounded-full animate-pulse"></div>
+                  Accessible Design
+                </div>
+                <div className="flex items-center gap-2 text-sm font-medium text-charcoal/70">
+                  <div className="w-2 h-2 bg-gradient-to-r from-accent to-primary rounded-full animate-pulse"></div>
+                  Sustainable Solutions
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-gradient-to-b from-primary to-secondary rounded-full mt-2 animate-scroll"></div>
           </div>
         </div>
       </Section>
