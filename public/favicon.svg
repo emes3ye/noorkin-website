@@ -1,0 +1,33 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main gradient background -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#79842A"/>
+      <stop offset="100%" stop-color="#3A7771"/>
+    </linearGradient>
+    <linearGradient id="highlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D69A3E"/>
+      <stop offset="100%" stop-color="#FFF5E4"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded rectangle background -->
+  <rect width="32" height="32" rx="6" fill="url(#bg)"/>
+  
+  <!-- Symbolic illumination design -->
+  <!-- Central light source -->
+  <circle cx="16" cy="14" r="3" fill="url(#highlight)"/>
+  
+  <!-- Light rays -->
+  <line x1="16" y1="6" x2="16" y2="10" stroke="url(#highlight)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="23.3" y1="9.7" x2="20.5" y2="12.5" stroke="url(#highlight)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="22" y2="14" stroke="url(#highlight)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="23.3" y1="18.3" x2="20.5" y2="15.5" stroke="url(#highlight)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="8.7" y1="18.3" x2="11.5" y2="15.5" stroke="url(#highlight)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="6" y1="14" x2="10" y2="14" stroke="url(#highlight)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="8.7" y1="9.7" x2="11.5" y2="12.5" stroke="url(#highlight)" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Foundation -->
+  <rect x="10" y="22" width="12" height="4" rx="2" fill="url(#bg)" fill-opacity="0.7"/>
+  <rect x="12" y="24" width="8" height="2" rx="1" fill="url(#highlight)" fill-opacity="0.5"/>
+</svg>

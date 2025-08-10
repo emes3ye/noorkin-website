@@ -23,6 +23,21 @@ export const metadata: Metadata = {
   title: "Noorkin.dev — Enlightened tech solutions",
   description: "Illuminating Your Business with Ethical Tech Solutions. Custom software development, cloud architecture, and IT consulting with integrity.",
   metadataBase: new URL("https://noorkin.dev"),
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+        sizes: "32x32",
+        type: "image/x-icon",
+      },
+      {
+        url: "/favicon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   openGraph: {
     title: "Noorkin.dev — Enlightened tech solutions",
     description: "Illuminating Your Business with Ethical Tech Solutions",
