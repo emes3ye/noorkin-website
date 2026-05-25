@@ -48,6 +48,13 @@ export default function Navbar() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
             <Link
+              href="/products"
+              className="relative text-charcoal hover:text-primary transition-all duration-300 font-medium group px-2 py-1"
+            >
+              <span className="relative z-10">Products</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </Link>
+            <Link
               href="/about"
               className="relative text-charcoal hover:text-primary transition-all duration-300 font-medium group px-2 py-1"
             >
@@ -109,6 +116,13 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
               >
                 Services
+              </Link>
+              <Link
+                href="/products"
+                className="block px-3 py-2 text-base font-medium text-charcoal hover:text-primary hover:bg-gradient-to-r from-primary/10 to-secondary/10 rounded-md transition-all duration-300"
+                onClick={() => setIsOpen(false)}
+              >
+                Products
               </Link>
               <Link
                 href="/about"
