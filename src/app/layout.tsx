@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 import "./globals.css";
 
 const inter = Inter({
@@ -61,6 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="bg-pattern min-h-screen flex flex-col">
+        <JsonLd data={[organizationSchema, websiteSchema]} />
         <a 
           href="#content" 
           className="sr-only focus:not-sr-only focus-ring fixed z-50 top-4 left-4 px-4 py-2 bg-accent text-white rounded-md font-medium"
