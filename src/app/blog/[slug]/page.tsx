@@ -1,6 +1,12 @@
 import { getPostBySlug, getAllPostSlugs } from "@/lib/contentful";
 import Section from "@/components/Section";
 import CTAButton from "@/components/CTAButton";
+import JsonLd from "@/components/JsonLd";
+import {
+  blogPostUrl,
+  buildBlogPostingSchema,
+  buildBreadcrumbSchema,
+} from "@/lib/schema";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -17,15 +23,25 @@ export async function generateMetadata({ params }: Params) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   if (!post) return {};
+  const canonical = blogPostUrl(post.slug);
   return {
     title: `${post.title} | Noorkin.dev`,
     description: post.excerpt,
+    alternates: {
+      canonical,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
+      url: canonical,
       type: "article",
       publishedTime: post.publishedDate,
       authors: post.author ? [post.author] : undefined,
+    },
+    twitter: {
+      card: "summary",
+      title: post.title,
+      description: post.excerpt,
     },
   };
 }
@@ -46,9 +62,13 @@ export default async function BlogPostPage({ params }: Params) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   if (!post) return notFound();
-  
+
   return (
     <>
+      <JsonLd
+        data={[buildBlogPostingSchema(post), buildBreadcrumbSchema(post)]}
+      />
+
       {/* Article Header */}
       <Section className="bg-white">
         <div className="max-w-4xl mx-auto">
