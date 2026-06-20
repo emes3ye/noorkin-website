@@ -1,4 +1,4 @@
-import { getAllPosts } from "@/lib/contentful";
+import { getAllPosts } from "@/lib/blog";
 import Section from "@/components/Section";
 import CTAButton from "@/components/CTAButton";
 import Link from "next/link";
