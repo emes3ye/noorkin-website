@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { getAllPostSlugs } from '@/lib/contentful'
+import { getAllPosts } from '@/lib/blog'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://noorkin.dev'
@@ -56,16 +56,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ]
 
-  // Dynamic blog pages
+  // Dynamic blog pages, sourced from the local Markdown posts.
   try {
-    const postSlugs = await getAllPostSlugs()
-    const blogPages: MetadataRoute.Sitemap = postSlugs.map((slug) => ({
-      url: `${baseUrl}/blog/${slug}`,
-      lastModified: new Date(),
+    const posts = await getAllPosts()
+    const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      // Use the post's own dates so lastModified reflects the content, not build time.
+      lastModified: new Date(post.updatedDate ?? post.publishedDate),
       changeFrequency: 'monthly' as const,
       priority: 0.5,
     }))
-    
+
     return [...staticPages, ...blogPages]
   } catch (error) {
     console.error('Error generating sitemap:', error)

@@ -1,4 +1,4 @@
-import { getPostBySlug, getAllPostSlugs } from "@/lib/contentful";
+import { getPostBySlug, getAllPostSlugs } from "@/lib/blog";
 import Section from "@/components/Section";
 import CTAButton from "@/components/CTAButton";
 import JsonLd from "@/components/JsonLd";

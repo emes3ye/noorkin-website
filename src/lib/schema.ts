@@ -1,4 +1,4 @@
-import type { Post } from "@/lib/contentful";
+import type { Post } from "@/lib/blog";
 
 // Canonical site origin. Kept here so every schema/canonical URL stays consistent.
 // Intentionally non-www to match the project's existing metadataBase.
@@ -36,7 +36,7 @@ export function blogPostUrl(slug: string): string {
   return `${SITE_URL}/blog/${slug}`;
 }
 
-// Per-article BlogPosting entity built only from visible Contentful fields.
+// Per-article BlogPosting entity built only from visible post fields.
 // dateModified, image, and wordCount are intentionally omitted because the
 // content model has no corresponding fields and no genuine value is available.
 export function buildBlogPostingSchema(post: Post) {
