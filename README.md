@@ -69,8 +69,8 @@ CONTENTFUL_ENVIRONMENT=master
 CONTENTFUL_CDA_TOKEN=your_contentful_delivery_token_here
 
 # Email Configuration (Contact Form)
-MAIL_FROM="Noorkin <hello@noorkin.dev>"
-MAIL_TO=hello@noorkin.dev
+MAIL_FROM="Noorkin <business@noorkin.dev>"
+MAIL_TO=business@noorkin.dev
 SMTP_HOST=smtp.example.com
 SMTP_PORT=587
 SMTP_USER=your_smtp_username

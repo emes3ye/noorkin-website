@@ -46,10 +46,10 @@ export default function ContactPage() {
                   <h3 className="font-semibold text-charcoal mb-2">Email Us</h3>
                   <p className="text-charcoal/80">
                     <a 
-                      href="mailto:hello@noorkin.dev" 
+                      href="mailto:business@noorkin.dev" 
                       className="text-primary hover:text-primary/80 transition-colors"
                     >
-                      hello@noorkin.dev
+                      business@noorkin.dev
                     </a>
                   </p>
                 </div>

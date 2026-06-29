@@ -194,7 +194,7 @@ export default function NoorLockPrivacyPage() {
           <h2>Contact</h2>
           <p>
             Questions about this policy or NoorLock's data handling? Email{" "}
-            <a href="mailto:hello@noorkin.dev">hello@noorkin.dev</a> or open an
+            <a href="mailto:business@noorkin.dev">business@noorkin.dev</a> or open an
             issue on the GitHub repository.
           </p>
         </article>
